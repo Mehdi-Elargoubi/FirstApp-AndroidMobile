@@ -1,12 +1,12 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,7 +46,14 @@ class MainActivity : AppCompatActivity() {
                 val correctLogin = "mehdi"
                 val correctPassword = "0000"
                 if (correctLogin == textLogin && correctPassword == textPassword){
-                    Toast.makeText(this, "Bienvenu a votre application", Toast.LENGTH_LONG).show()
+                    //Toast.makeText(this, "Bienvenu a votre application", Toast.LENGTH_LONG).show()
+                    // Intent Explicitly
+                    login.setText("")
+                    password.setText("")
+                    Intent(this,HomeActivity::class.java).also {
+                        it.putExtra("login",textLogin)
+                        startActivity(it)
+                    }
                 }else{
                     error.text = "Email ou mot de passe n'est pas correct"
                     error.visibility = View.VISIBLE
