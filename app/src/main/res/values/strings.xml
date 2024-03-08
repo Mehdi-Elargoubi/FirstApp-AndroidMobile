@@ -7,4 +7,11 @@
     <string name="login">Login</string>
     <string name="password">Password</string>
     <string name="home_activity_title">Accueil</string>
+    <string-array name="posts">
+        <item>Post1</item>
+        <item>Post2</item>
+        <item>Post3</item>
+        <item>Post4</item>
+    </string-array>
+
 </resources>
